@@ -47,7 +47,6 @@ dependencies {
     api("com.squareup.retrofit2:retrofit:3.0.0")
     api("com.squareup.retrofit2:converter-moshi:3.0.0")
     api("com.squareup.moshi:moshi-kotlin:1.15.2")
-
     // OkHttp
     api("com.squareup.okhttp3:okhttp:5.3.2")
     api("com.squareup.okhttp3:logging-interceptor:5.3.2")
@@ -61,6 +60,8 @@ dependencies {
     androidTestImplementation("androidx.test:runner:1.7.0")
     androidTestImplementation("androidx.test.ext:junit:1.3.0")
 }
+
+
 
 afterEvaluate {
     publishing {

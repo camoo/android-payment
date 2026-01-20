@@ -8,11 +8,14 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-object CamooClientFactory {
+internal object CamooClientFactory {
 
     fun create(config: CamooConfig): CamooPaymentApi {
+
         val logger = HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
+            redactHeader("X-Api-Key")
+            redactHeader("X-Api-Secret")
         }
 
         val okHttp = OkHttpClient.Builder()
@@ -33,3 +36,4 @@ object CamooClientFactory {
         return retrofit.create(CamooPaymentApi::class.java)
     }
 }
+
