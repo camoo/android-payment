@@ -4,6 +4,12 @@ import java.net.URLEncoder
 import javax.crypto.Mac
 import javax.crypto.spec.SecretKeySpec
 
+/**
+ * Webhook signature verification.
+ *
+ * ⚠️ NOT USED on Android.
+ * Intended for backend / JVM usage only.
+ */
 object CamooSignatureVerifier {
 
     /**

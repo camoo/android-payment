@@ -6,8 +6,11 @@ data class Payment(
     val amount: Double? = null,
     val currency: String? = null,
     val network: String? = null,
-    val created_at: Long? = null,
-    val completed_at: String? = null,
-    val notified_at: String? = null,
-    val external_reference: String? = null
+    val createdAt: Long? = null,
+    val completedAt: String? = null,
+    val notifiedAt: String? = null,
+    val externalReference: String? = null,
+    val fees : Double? = null,
+    val netAmount : Double? = null,
+    val phoneNumber: String? = null,
 )

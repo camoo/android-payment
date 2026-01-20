@@ -5,10 +5,22 @@ import cm.camoo.payment.model.AccountResponse
 import cm.camoo.payment.model.CashoutRequest
 import cm.camoo.payment.model.Payment
 
-class CamooPayManager(
+internal class CamooPayManager(
     private val api: CamooPaymentApi
 ) {
-    suspend fun cashout(request: CashoutRequest): Payment = api.cashout(request).cashOut
-    suspend fun verify(paymentId: String): Payment = api.verify(paymentId).verify
-    suspend fun account(): AccountResponse = api.account()
+
+    suspend fun cashout(request: CashoutRequest): Payment {
+        val response = api.cashout(request)
+        return response.cashOut
+    }
+
+    suspend fun verify(paymentId: String): Payment {
+        val response = api.verify(paymentId)
+        return response.verify
+    }
+
+    suspend fun account(): AccountResponse {
+        return api.account()
+    }
 }
+
